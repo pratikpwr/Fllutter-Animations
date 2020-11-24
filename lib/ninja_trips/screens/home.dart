@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../shared/screenTitle.dart';
 import '../shared/tripList.dart';
 
-class Home extends StatefulWidget {
+class NinjaTrips extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _NinjaTripsState createState() => _NinjaTripsState();
 }
 
-class _HomeState extends State<Home> {
+class _NinjaTripsState extends State<NinjaTrips> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

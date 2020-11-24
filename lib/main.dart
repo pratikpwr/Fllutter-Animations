@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/screens/sandbox.dart';
-import './screens/home.dart';
+import './healthy_fruits/views/screens/fruits_home.dart';
+import './ninja_trips/screens/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Paradise Trips',
-      home: Home(),
+      title: 'Flutter Animation',
+      home: FruitsHome(),
     );
   }
 }
