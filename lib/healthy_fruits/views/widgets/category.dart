@@ -11,15 +11,24 @@ class FoodCategory extends StatefulWidget {
 class _FoodCategoryState extends State<FoodCategory>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
+  Animation _curve;
   Animation<Offset> _offsetAnimation;
 
   @override
   void initState() {
     _controller =
-        AnimationController(duration: Duration(milliseconds: 900), vsync: this)..forward();
+        AnimationController(duration: Duration(milliseconds: 900), vsync: this)
+          ..forward();
 
-    _offsetAnimation = Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0))
-        .animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
+    _curve = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
+    _offsetAnimation = TweenSequence(<TweenSequenceItem<Offset>>[
+      TweenSequenceItem(
+          tween: Tween<Offset>(begin: Offset(1, 0), end: Offset(-0.15, 0)),
+          weight: 50),
+      TweenSequenceItem(
+          tween: Tween<Offset>(begin: Offset(-0.15, 0), end: Offset(0, 0)),
+          weight: 50)
+    ]).animate(_curve);
 
     super.initState();
   }

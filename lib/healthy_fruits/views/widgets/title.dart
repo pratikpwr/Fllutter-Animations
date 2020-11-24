@@ -5,7 +5,7 @@ class FoodTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      duration: Duration(milliseconds: 1000),
+      duration: Duration(milliseconds: 1100),
       curve: Curves.easeIn,
       tween: Tween<double>(begin: 0, end: 1),
       builder: (context, _val, child) {

@@ -11,16 +11,24 @@ class FoodTabs extends StatefulWidget {
 class _FoodTabsState extends State<FoodTabs>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
+  Animation _curve;
   Animation<Offset> _offsetAnimation;
 
   @override
   void initState() {
     _controller =
-        AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
+        AnimationController(duration: Duration(milliseconds: 900), vsync: this)
           ..forward();
 
-    _offsetAnimation = Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0))
-        .animate(CurvedAnimation(curve: Curves.ease, parent: _controller));
+    _curve = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
+    _offsetAnimation = TweenSequence(<TweenSequenceItem<Offset>>[
+      TweenSequenceItem(
+          tween: Tween<Offset>(begin: Offset(1, 0), end: Offset(-0.2, 0)),
+          weight: 50),
+      TweenSequenceItem(
+          tween: Tween<Offset>(begin: Offset(-0.2, 0), end: Offset(0, 0)),
+          weight: 50)
+    ]).animate(_curve);
     super.initState();
   }
 

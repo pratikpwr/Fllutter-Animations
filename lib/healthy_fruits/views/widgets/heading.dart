@@ -9,6 +9,7 @@ class FoodHeading extends StatefulWidget {
 class _FoodHeadingState extends State<FoodHeading>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
+  Animation _curve;
 
   // Animation<Offset> _searchOffsetAnimation;
   Animation<Offset> _profileOffsetAnimation;
@@ -19,13 +20,21 @@ class _FoodHeadingState extends State<FoodHeading>
         AnimationController(duration: Duration(milliseconds: 900), vsync: this)
           ..forward();
 
+    _curve = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
+
     // _searchOffsetAnimation = Tween<Offset>(
     //         begin: Offset(1, 0), end: Offset(0, 0))
-    //     .animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+    //     .animate(_curve);
 
-    _profileOffsetAnimation =
-        Tween<Offset>(begin: Offset(8, 0), end: Offset(0, 0))
-            .animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
+    _profileOffsetAnimation = TweenSequence(<TweenSequenceItem<Offset>>[
+      TweenSequenceItem(
+          tween: Tween<Offset>(begin: Offset(8, 0), end: Offset(-0.8, 0)),
+          weight: 50),
+      TweenSequenceItem(
+          tween: Tween<Offset>(begin: Offset(-0.8, 0), end: Offset(0, 0)),
+          weight: 50)
+    ]).animate(_curve);
+    // Tween<Offset>(begin: Offset(8, 0), end: Offset(0, 0)).animate(_curve);
     super.initState();
   }
 
