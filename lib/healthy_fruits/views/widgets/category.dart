@@ -48,7 +48,7 @@ class _FoodCategoryState extends State<FoodCategory>
         children: [
           Icon(
             FontAwesome.sliders,
-            size: 26,
+            size: 24,
             color: Colors.grey[800],
           ),
           Container(
@@ -62,16 +62,16 @@ class _FoodCategoryState extends State<FoodCategory>
                     bottomRight: Radius.circular(20))),
             child: Text(
               'Fruits',
-              style: GoogleFonts.poppins(color: Colors.white, fontSize: 18),
+              style: GoogleFonts.poppins(color: Colors.white, fontSize: 17),
             ),
           ),
           Text(
             'Vegetables',
-            style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 18),
+            style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 17),
           ),
           Text(
             'Drinks',
-            style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 18),
+            style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 17),
           )
         ],
       ),

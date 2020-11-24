@@ -40,7 +40,7 @@ class _FruitSideBarState extends State<FruitSideBar>
       position: _offsetAnimation,
       child: Container(
         height: totalSize.height * 0.7,
-        width: totalSize.width * 0.18,
+        width: totalSize.width * 0.19,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(bottomRight: Radius.circular(45))),

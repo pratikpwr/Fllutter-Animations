@@ -29,6 +29,9 @@ class _FoodTabsState extends State<FoodTabs>
           tween: Tween<Offset>(begin: Offset(-0.2, 0), end: Offset(0, 0)),
           weight: 50)
     ]).animate(_curve);
+
+
+
     super.initState();
   }
 
@@ -47,17 +50,17 @@ class _FoodTabsState extends State<FoodTabs>
         children: [
           Icon(
             Feather.home,
-            size: 30,
+            size: 26,
             color: MyColors.green,
           ),
           Icon(
             Feather.heart,
-            size: 30,
+            size: 26,
             color: Colors.grey,
           ),
           Icon(
             Feather.shopping_bag,
-            size: 30,
+            size: 26,
             color: Colors.grey,
           )
         ],

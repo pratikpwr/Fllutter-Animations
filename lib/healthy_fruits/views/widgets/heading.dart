@@ -61,7 +61,7 @@ class _FoodHeadingState extends State<FoodHeading>
             ),
           ),
         ),
-        Icon(FontAwesome.search, size: 26, color: Colors.grey[800]),
+        Icon(FontAwesome.search, size: 24, color: Colors.grey[800]),
       ],
     );
   }
