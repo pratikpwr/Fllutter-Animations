@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations/healthy_fruits/colors.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class FoodTabs extends StatefulWidget {
   @override
